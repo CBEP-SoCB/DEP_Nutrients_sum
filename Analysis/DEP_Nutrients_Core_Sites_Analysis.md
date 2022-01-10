@@ -395,7 +395,7 @@ legend('topleft', ncol = 1,
 
 <img src="DEP_Nutrients_Core_Sites_Analysis_files/figure-gfm/ternary_data_quality-1.png" style="display: block; margin: auto;" />
 
-It is not obvious that he data flags here are causing a major change in
+It is not obvious that the data flags here are causing a major change in
 how we might evaluate the data, so we move on.
 
 ##### Colored by Site
@@ -418,7 +418,7 @@ legend('topleft', ncol = 1,
 
 <img src="DEP_Nutrients_Core_Sites_Analysis_files/figure-gfm/ternary_site-1.png" style="display: block; margin: auto;" />
 
-There is clearly pattern there, but hte Viridis color scale is really
+There is clearly pattern there, but the Viridis color scale is really
 more suited for continuous color scale, not a discrete color scale, as
 here.
 
@@ -730,7 +730,7 @@ anova(core_din_gam)
 #> s(yearf) 1.890  2.000 17.212  < 2e-16
 ```
 
-Site remains an important predictor, and os are year and season.
+Site remains an important predictor, and so are year and season.
 
 ``` r
 plot(core_din_gam)
@@ -762,7 +762,7 @@ gam.check(core_din_gam)
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     par(oldpar)
 
-Those diagnostics are pretty good….
+Those diagnostics are pretty good.
 
 #### Marginal Means
 
@@ -782,7 +782,7 @@ for our purpose, which is to compare “typical” levels at each site.
 of variation may not be similar at all sites – especially those sites
 strongly influenced by river inputs.)
 
-WE show all three options, to clarify, but only keep the last option for
+We show all three options, to clarify, but only keep the last option for
 further processing.
 
 ``` r
@@ -909,7 +909,7 @@ plt + facet_wrap(~site)
 
 <img src="DEP_Nutrients_Core_Sites_Analysis_files/figure-gfm/tn_histograms-1.png" style="display: block; margin: auto;" />
 
-We note that the PResumpscot River sites exceed both standards more
+We note that the Presumpscot River sites exceed both standards more
 often than other sites.
 
 ### Draft Graphic
@@ -1150,7 +1150,7 @@ gam.check(core_tn_gam)
 
 Again, diagnostics look O.K, although there is a dearth of high
 residuals, and one should not take these diagnostics too seriously on a
-hierarchical model…
+hierarchical model.
 
 #### Marginal Means
 
@@ -1326,7 +1326,7 @@ plot(core_n2p_gam)
 
 <img src="DEP_Nutrients_Core_Sites_Analysis_files/figure-gfm/view_n2p_gam-1.png" style="display: block; margin: auto;" />
 
-Looks like a linear fit might work just about as well….
+Looks like a linear fit might work just about as well.
 
 ``` r
 oldpar = par(mfrow = c(2,2))
@@ -1346,7 +1346,7 @@ gam.check(core_n2p_gam)
     #> indicate that k is too low, especially if edf is close to k'.
     #> 
     #>          k'  edf k-index p-value  
-    #> s(doy) 3.00 1.81    0.83   0.045 *
+    #> s(doy) 3.00 1.81    0.83   0.035 *
     #> ---
     #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     par(oldpar)
@@ -1422,9 +1422,9 @@ plot(core_n2p_emms_gam_doy) + coord_flip() +
 
 <img src="DEP_Nutrients_Core_Sites_Analysis_files/figure-gfm/plot_n2p_gam_marginals_doy-1.png" style="display: block; margin: auto;" />
 
-On the other hand, the is a strong N to p ratio pattern. Since there is
-only a little seasonal pattern in the N values, the P values must climb
-seasonally.
+On the other hand, there is a strong N to p ratio pattern. Since there
+is only a little seasonal pattern in the N values, the P values must
+climb seasonally.
 
 # Phosphorus (A Few Graphics)
 
@@ -1439,7 +1439,7 @@ ggplot(core_data, aes(tp)) +
 
 <img src="DEP_Nutrients_Core_Sites_Analysis_files/figure-gfm/tp_histogram-1.png" style="display: block; margin: auto;" />
 
-So very little of the data is censored….
+So very little of the data is censored.
 
 ``` r
 ggplot(core_data, aes(doy, tp)) + 

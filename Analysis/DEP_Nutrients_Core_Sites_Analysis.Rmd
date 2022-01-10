@@ -269,7 +269,7 @@ legend('topleft', ncol = 1,
         col = cbep_colors())
 ```
 
-It is not obvious that he data flags here are causing a major change in how we
+It is not obvious that the data flags here are causing a major change in how we
 might evaluate the data, so we move on.
 
 ##### Colored by Site
@@ -289,7 +289,7 @@ legend('topleft', ncol = 1,
         col = pal)
 ```
 
-There is clearly pattern there, but hte Viridis color scale is really more 
+There is clearly pattern there, but the Viridis color scale is really more 
 suited for continuous color scale, not a discrete color scale, as here.
 
 ##### Produce PDF
@@ -488,7 +488,7 @@ core_din_gam <- gam(log(din) ~ site + s(doy, k = 5) +
 anova(core_din_gam)
 ```
 
-Site remains an important predictor, and os are year and season.
+Site remains an important predictor, and so are year and season.
 
 ```{r view_din_gam}
 plot(core_din_gam)
@@ -500,7 +500,7 @@ gam.check(core_din_gam)
 par(oldpar)
 ```
 
-Those diagnostics are pretty good....
+Those diagnostics are pretty good.
 
 #### Marginal Means
 The marginal means fit with no specification for the day of year fills in the
@@ -517,7 +517,7 @@ at each site.  (Note this is only marginally O.K., since the actual seasonal
 patterns of variation may not be similar at all sites -- especially those sites 
 strongly influenced by river inputs.)
 
-WE show all three options, to clarify, but only keep the last option for
+We show all three options, to clarify, but only keep the last option for
 further processing.
 
 ```{r extract_din_gam_marginal_means}
@@ -582,7 +582,7 @@ versus dissolved oxygen standards at about 0.45 mg/l could be large.
 plt + facet_wrap(~site)
 ```
 
-We note that the PResumpscot River sites exceed both standards more often 
+We note that the Presumpscot River sites exceed both standards more often 
 than other sites.
 
 
@@ -702,7 +702,7 @@ par(oldpar)
 ```
 
 Again, diagnostics look O.K, although there is a dearth of high residuals, and 
-one should not take these diagnostics too seriously on a hierarchical model...
+one should not take these diagnostics too seriously on a hierarchical model.
 
 #### Marginal Means
 The marginal means fit  with no specification for the day of year fills in the
@@ -823,7 +823,7 @@ anova(core_n2p_gam)
 plot(core_n2p_gam)
 ```
 
-Looks like a linear fit might work just about as well....
+Looks like a linear fit might work just about as well.
 
 ```{r n2p_gam_diagnostics}
 oldpar = par(mfrow = c(2,2))
@@ -861,8 +861,8 @@ plot(core_n2p_emms_gam_doy) + coord_flip() +
   
 ```
 
-On the other hand, the is a strong N to p ratio pattern.  Since there is only a 
-little seasonal pattern in the N values, the P values must climb seasonally.
+On the other hand, there is a strong N to p ratio pattern.  Since there is only
+a little seasonal pattern in the N values, the P values must climb seasonally.
 
 # Phosphorus (A Few Graphics)
 ```{r tp_histogram, fig.width = 7, fig.height = 5}
@@ -872,7 +872,7 @@ ggplot(core_data, aes(tp)) +
   scale_x_log10()
 ```
 
-So very little of the data is censored....
+So very little of the data is censored.
 
 ```{r tp_plot}
 ggplot(core_data, aes(doy, tp)) + 
